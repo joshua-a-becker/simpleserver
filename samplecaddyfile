@@ -1,0 +1,11 @@
+challenge.negotiation.education {
+    # Main app
+    handle /* {
+        reverse_proxy localhost:3000
+    }
+    
+    # JSON server at /api path
+    handle /json/* {
+        reverse_proxy localhost:8000
+    }
+}
