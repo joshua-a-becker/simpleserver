@@ -1,0 +1,63 @@
+factors:
+    - name: playerCount
+      desc: playerCount determines the number of Players are in a Game.
+      values:
+        - value: 3
+    - name: numRounds
+      desc: How many times participants will make a choice
+      values:
+        - value: 1
+    - name: basicpay
+      desc: basic payment.
+      values:
+        - value: 2.5
+        - value: 1
+    - name: featureUrl
+      desc: URL of the pay off matrix
+      values:
+        - value: https://decide.empirica.app/data/json/feature_data.json
+        - value: https://raw.githubusercontent.com/joshua-a-becker/RTools/master/testscoresheet.json
+    - name: scenario
+      values:
+        - value: pilot_simple_scaled
+        - value: pilot_final_easy
+        - value: pilot_easy_scaled
+        - value: pilot_hard_scaled
+    - name: formalSubmitDuration
+      desc: Duration of the Formal Submit stage in seconds
+      values:
+        - value: 60
+        - value: 603333
+        - value: 600
+        - value: 120
+    - name: formalVoteDuration
+      desc: Duration of the Formal Submit stage in seconds
+      values:
+        - value: 60
+        - value: 222222
+        - value: 600
+        - value: 120
+    - name: informalSubmitDuration
+      desc: Duration of the Informal Submit stage in seconds
+      values:
+        - value: 600
+        - value: 600333
+        - value: 60
+        - value: 15
+        - value: 30
+        - value: 120
+    - name: settingsUrl
+      values:
+        - value: https://challenge.negotiation.education/json/settings.json
+treatments:
+    - name: pilot_easy_scaled
+      factors:
+        basicpay: 2.5
+        featureUrl: https://raw.githubusercontent.com/joshua-a-becker/RTools/master/testscoresheet.json
+        formalSubmitDuration: 60
+        formalVoteDuration: 60
+        informalSubmitDuration: 600
+        numRounds: 1
+        playerCount: 3
+        scenario: pilot_easy_scaled
+        settingsUrl: https://challenge.negotiation.education/json/settings.json

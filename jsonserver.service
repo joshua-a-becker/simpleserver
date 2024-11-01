@@ -1,0 +1,22 @@
+# /etc/systemd/system/jsonserver.service
+[Unit]
+Description=CORS-enabled HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+# Adjust these paths to match your setup
+WorkingDirectory=/jsonserver
+ExecStart=/usr/bin/python3 /usr/local/bin/jsonserver.py
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=10
+# Basic security hardening
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
